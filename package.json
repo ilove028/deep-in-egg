@@ -1,0 +1,24 @@
+{
+  "name": "deep-in-egg",
+  "version": "1.0.0",
+  "description": "Deep in egg",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug --inspect-brk"
+  },
+  "keywords": [
+    "egg",
+    "tutorial"
+  ],
+  "author": "mx",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^2.23.0",
+    "ws": "^7.1.2"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.13.0"
+  }
+}

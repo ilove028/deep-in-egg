@@ -1,0 +1,14 @@
+{
+  "name": "egg-ga",
+  "eggPlugin": {
+    "name": "ua"
+  },
+  "version": "1.0.0",
+  "description": "User agent detect",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
