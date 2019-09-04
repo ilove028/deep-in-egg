@@ -4,9 +4,9 @@
   "description": "Deep in egg",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "egg-bin dev",
-    "debug": "egg-bin debug --inspect-brk"
+    "debug": "egg-bin debug --inspect-brk",
+    "test": "egg-bin test"
   },
   "keywords": [
     "egg",
@@ -16,9 +16,11 @@
   "license": "ISC",
   "dependencies": {
     "egg": "^2.23.0",
+    "egg-logrotator": "^3.1.0",
     "ws": "^7.1.2"
   },
   "devDependencies": {
-    "egg-bin": "^4.13.0"
+    "egg-bin": "^4.13.0",
+    "egg-mock": "^3.23.1"
   }
 }

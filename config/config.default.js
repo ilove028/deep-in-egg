@@ -1,3 +1,6 @@
 module.exports = {
-  keys: 'mx'
+  keys: 'mx',
+  logrotator: {
+    
+  }
 }
