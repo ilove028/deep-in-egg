@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "egg-bin dev",
-    "debug": "egg-bin debug --inspect-brk",
+    "debug": "egg-bin debug",
+    "debug-brk": "egg-bin debug --inspect-brk",
     "test": "egg-bin test"
   },
   "keywords": [
