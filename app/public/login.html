@@ -3,5 +3,16 @@
   <head></head>
   <body>
     <a href="https://github.com/login/oauth/authorize?client_id=c5b38cf736e74ed1399c&redirect_uri=http://localhost:7001/oauth/callback">Login with Github</a>
+    <form action="/login" method="POST">
+      <fieldset>
+        <label for="username">Accouont</label>
+        <input type="text" name="username">
+      </fieldset>
+      <fieldset>
+        <label for="password">Password</label>
+        <input type="password" name="password">
+      </fieldset>
+      <button type="submit">Login</button>
+    </form>
   </body>
 </html>

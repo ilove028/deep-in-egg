@@ -1,4 +1,5 @@
 const { Server } = require('ws')
+const LocalStrategy = require('passport-local').Strategy
 
 // module.exports = app => {
 //   app.once('server', server => {
@@ -33,6 +34,13 @@ const { Server } = require('ws')
 module.exports = class AppBootHook {
   constructor(app) {
     this.app = app
+    this.app.passport.use(new LocalStrategy(function(username, password, done) {
+      if (username === 'mx' && password === '123456') {
+        return done(null, { username: 'mx', id: '000001' })
+      } else {
+        return done(null, false, { message: 'Incorrect username.' })
+      }
+    }))
   }
 
   async willReady() {
