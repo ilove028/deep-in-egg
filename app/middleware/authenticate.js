@@ -13,7 +13,7 @@ module.exports = (options = {}) => {
           }
         })(ctx.request, ctx.response)
       })
-      ctx.session.token = result
+      ctx.session.token = result.id
       ctx.redirect(successRedirect)
     } catch (err) {
       ctx.redirect(failureRedirect)

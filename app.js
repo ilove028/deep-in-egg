@@ -1,5 +1,6 @@
 const { Server } = require('ws')
 const LocalStrategy = require('passport-local').Strategy
+const OAuth2Strategy = require('passport-oauth').OAuth2Strategy
 
 // module.exports = app => {
 //   app.once('server', server => {
@@ -51,6 +52,19 @@ module.exports = class AppBootHook {
         })
         .catch(done)
     }))
+
+    this.app.passport.use('githubProvider', new OAuth2Strategy(
+      {
+        authorizationURL: 'https://github.com/login/oauth/authorize',
+        tokenURL: 'https://github.com/login/oauth/access_token',
+        clientID: app.config.oauth.github.clientId,
+        clientSecret: app.config.oauth.github.clientSecret,
+        callbackURL: '/oauth/callback'
+      },
+      (accessToken, refreshToken, profile, done) => {
+        this.app.logger.info(accessToken)
+      }
+    ))
   }
 
   async willReady() {

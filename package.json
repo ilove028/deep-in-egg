@@ -21,6 +21,7 @@
     "mockjs": "^1.0.1-beta3",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "passport-oauth": "^1.0.0",
     "ws": "^7.1.2"
   },
   "devDependencies": {
