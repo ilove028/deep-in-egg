@@ -35,11 +35,21 @@ module.exports = class AppBootHook {
   constructor(app) {
     this.app = app
     this.app.passport.use(new LocalStrategy(function(username, password, done) {
-      if (username === 'mx' && password === '123456') {
-        return done(null, { username: 'mx', id: '000001' })
-      } else {
-        return done(null, false, { message: 'Incorrect username.' })
-      }
+      // if (username === 'mx' && password === '123456') {
+      //   return done(null, { username: 'mx', id: '000001' })
+      // } else {
+      //   return done(null, false, { message: 'Incorrect username.' })
+      // }
+      const ctx = app.createAnonymousContext()
+      ctx.service.user.getUserByName(username)
+        .then(user => {
+          if (user && user.password === password) {
+            done(null, { id: user.id, name: user.name })
+          } else {
+            done(new Error('Incorrect username.'))
+          }
+        })
+        .catch(done)
     }))
   }
 

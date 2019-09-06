@@ -1,5 +1,5 @@
 module.exports = app => {
-  const { controller: { user, oauth, cookie, home } } = app
+  const { controller: { user, oauth, cookie }, middleware } = app
   app.get('/user/:id', user.getUser)
 
   app.get('/oauth/callback', oauth.callback)
@@ -7,5 +7,5 @@ module.exports = app => {
   app.get('/cookie/set', cookie.set)
   app.get('/cookie/remove', cookie.remove)
 
-  app.post('/login', home.login)
+  app.post('/login', middleware.authenticate({ successRedirect: '/public/home.html', failureRedirect: '/public/login.html' }))
 }

@@ -1,8 +1,5 @@
 module.exports = {
   keys: 'mx1,mx2,mx3',
-  logrotator: {
-    
-  },
   oauth: {
     github: {
       clientId: 'c5b38cf736e74ed1399c',

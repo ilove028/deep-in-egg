@@ -17,10 +17,14 @@ module.exports = app => {
   return {
     schedule: {
       interval: '1m',
-      type: 'all'
+      type: 'worker'
     },
     async task(ctx) {
-      ctx.app.logger.info('update cache')
+      // 多进程缓存 还有集群缓存放在redis是否更好
+      const preCache = app.cache || []
+      const user = await ctx.service.user.createRandomUser()
+      app.cache = [user].concat(preCache)
+      app.logger.info(app.cache)
     }
   }
 }

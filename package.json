@@ -18,6 +18,7 @@
   "dependencies": {
     "egg": "^2.23.0",
     "egg-logrotator": "^3.1.0",
+    "mockjs": "^1.0.1-beta3",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "ws": "^7.1.2"
